@@ -16,6 +16,17 @@ Find the broken equation, tighten the notation, replace a proxy with a derivatio
 
 **PULL REQUESTS WELCOME.**
 
+## Plain-Language Summary
+
+The Divine Blueprint asks whether several hard-to-connect domains can be modeled as one recursive information process:
+
+1. structures preserve identity by referring back to themselves;
+2. information scales with boundaries;
+3. couplings change across energy scale;
+4. generative systems produce successors that are similar but not identical.
+
+The code does not prove that the universe works this way. It checks whether the paper, formulas, constants, data tables, and Python implementations agree with one another. A strong criticism is one that identifies a broken equation, an unsupported proxy, a mismatch between paper and code, or an external measurement that rules out a claimed physical mapping.
+
 Read the project in this order:
 
 1. The paper states the theory, equations, proposed synthesis, and falsification criteria.
@@ -169,6 +180,8 @@ code/tests/test_formula_registry.py
 
 `data/formula_registry.csv` is the formula-level ledger. It maps every displayed mathematical relation in the paper to executable code and an associated passing pytest function.
 
+`data/claim_triage.csv` is the critique-response ledger. It separates claims that are executable inside the repository from bounded proxies, formalization gaps, external empirical targets, non-executable context, and presentation risks. This prevents a broad or symbolic claim from being treated as code-validated evidence unless it has been converted into a testable form.
+
 It validates executable versions of the paper's main claims:
 
 - Fractal scaling and bounded fixed-point recursion.
@@ -189,6 +202,25 @@ It validates executable versions of the paper's main claims:
 - Uncertainty propagation by quadrature.
 
 Some claims in the paper are broad theory claims rather than directly measurable code claims. Those are represented as bounded computational proxies and explicit falsification criteria, not as completed empirical proof.
+
+## Claim Triage Protocol
+
+Every critique is routed through the same boundary:
+
+```text
+claim -> class -> required evidence -> repo action -> response rule
+```
+
+The current claim classes are:
+
+- `executable_internal`: implemented and tested inside the repository.
+- `bounded_proxy`: represented by a deliberately limited computational proxy.
+- `formalization_gap`: conceptually important but missing a complete derivation.
+- `external_empirical_target`: dependent on independent measurement or datasets.
+- `non_executable_context`: source, reception, symbolic, or cultural context that cannot be validated by Python tests.
+- `presentation_risk`: wording, history, or framing that prevents technical review before the paper/code can be evaluated.
+
+This is the response to a useful outside criticism: non-executable claims need thresholds rather than blanket acceptance or blanket dismissal. The repository now treats that distinction as part of the validation apparatus.
 
 ## What Has Been Mathematically Verified
 
@@ -231,7 +263,7 @@ These are not cosmetic caveats. They are the first places the theory should be a
 The full active suite passes:
 
 ```text
-238 passed, 0 skipped
+239 passed, 0 skipped
 TOTAL 1818 statements, 0 missed
 100.00% active-core coverage
 Required test coverage of 100% reached

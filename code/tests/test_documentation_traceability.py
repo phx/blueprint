@@ -8,6 +8,7 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 MATRIX_PATH = PROJECT_ROOT / "data" / "validation_matrix.csv"
+TRIAGE_PATH = PROJECT_ROOT / "data" / "claim_triage.csv"
 PAPER_PATH = PROJECT_ROOT / "paper" / "THE_DIVINE_BLUEPRINT.tex"
 README_PATH = PROJECT_ROOT / "README.md"
 CODE_PATH = PROJECT_ROOT / "code"
@@ -37,9 +38,24 @@ VALID_STATUSES = {
     "external_target",
 }
 
+TRIAGE_CLASSES = {
+    "executable_internal",
+    "bounded_proxy",
+    "formalization_gap",
+    "external_empirical_target",
+    "non_executable_context",
+    "presentation_risk",
+}
+
 
 def _validation_rows():
     with MATRIX_PATH.open(newline="", encoding="utf-8") as handle:
+        rows = list(csv.DictReader(handle))
+    return rows
+
+
+def _triage_rows():
+    with TRIAGE_PATH.open(newline="", encoding="utf-8") as handle:
         rows = list(csv.DictReader(handle))
     return rows
 
@@ -109,6 +125,25 @@ def test_paper_and_readme_state_validation_boundary_and_source_of_truth():
         assert "not empirical proof" in document or "do not prove" in document
         assert "100%" in document
         assert "external" in document
+
+
+def test_claim_triage_protocol_tracks_non_executable_boundaries():
+    rows = _triage_rows()
+    assert {row["claim_class"] for row in rows} == TRIAGE_CLASSES
+
+    for row in rows:
+        assert row["definition"].strip()
+        assert row["evidence_required"].strip()
+        assert row["repo_action"].strip()
+        assert row["response_rule"].strip()
+
+    readme = README_PATH.read_text(encoding="utf-8")
+    paper = PAPER_PATH.read_text(encoding="utf-8")
+    normalized_paper = re.sub(r"\s+", " ", paper)
+    assert "data/claim_triage.csv" in readme
+    assert "data/claim_triage.csv" in paper
+    assert "non-executable claims need thresholds" in readme
+    assert "non-executable claims require thresholds" in normalized_paper
 
 
 def test_public_docs_do_not_reference_private_source_material():

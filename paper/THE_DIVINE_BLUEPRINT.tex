@@ -142,7 +142,7 @@ succession.
 
 The framework is a theory-building program, not empirical proof.  Its internal
 claims are tied to an executable Python validation suite.  At the time of this
-paper the active suite reports \texttt{238 passed, 0 skipped}, with
+paper the active suite reports \texttt{239 passed, 0 skipped}, with
 \texttt{1818} active-core statements, \texttt{0} missed statements, and
 \texttt{100.00\%} active-core coverage under a \texttt{100\%} coverage gate.
 These tests validate internal consistency among the paper, constants, equations,
@@ -618,7 +618,7 @@ The active validation suite reports
 \begin{center}
 \begin{tabular}{ll}
 \toprule
-Tests & \texttt{238 passed, 0 skipped}\\
+Tests & \texttt{239 passed, 0 skipped}\\
 Statements & \texttt{1818 total, 0 missed}\\
 Coverage & \texttt{100.00\%}\\
 \bottomrule
@@ -666,6 +666,22 @@ Formula-level traceability is maintained separately from the claim-level ledger:
 every displayed mathematical relation in this paper is registered in
 \path{data/formula_registry.csv}, mapped to a code implementation, and tied to
 an associated passing pytest function.
+
+\subsection{Claim triage protocol}
+
+The validation apparatus also includes \path{data/claim_triage.csv}.  This
+ledger records how critiques are routed before they are answered or converted
+into repository changes:
+\[
+  \text{claim}\to\text{class}\to\text{required evidence}\to
+  \text{repository action}\to\text{response rule}.
+\]
+The active classes are executable internal claims, bounded proxies,
+formalization gaps, external empirical targets, non-executable context, and
+presentation risks.  This is a necessary boundary condition: non-executable
+claims require thresholds rather than blanket acceptance or blanket dismissal.
+Only claims that have been converted into explicit mathematical or
+computational form are allowed to enter the paper-to-code validation chain.
 
 \section{Falsification Criteria}
 
