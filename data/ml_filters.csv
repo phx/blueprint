@@ -1,0 +1,2 @@
+layers,units,dropout
+3,64,0.1

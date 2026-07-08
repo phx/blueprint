@@ -1,0 +1,2 @@
+resolution_tolerance,min_admissibility,max_admissibility,max_localization,scaling
+1e-06,0.1,10.0,1.0,1.0

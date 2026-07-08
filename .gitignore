@@ -1,0 +1,25 @@
+.DS_Store
+ORIGINAL.pdf
+
+# Environments
+.venv/
+venv/
+
+# Local untracked notes
+supplementary/
+
+# Local Reddit/Devvit outreach workspace
+reddit-devvit/
+
+# Generated artifacts
+output/
+tmp/
+htmlcov/
+.coverage
+.coverage.*
+.pytest_cache/
+.mypy_cache/
+.hypothesis/
+__pycache__/
+*.py[cod]
+*.bak

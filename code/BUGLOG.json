@@ -1,0 +1,22 @@
+{
+  "current_status": {
+    "last_verified": "2026-07-08",
+    "test_command": "python -m pytest --cov=core --cov-report=term-missing",
+    "result": "238 passed, 0 skipped, 100.00% active-core coverage"
+  },
+  "open_bugs": [],
+  "notes": [
+    {
+      "id": "NOTE-001",
+      "title": "External validation boundary",
+      "status": "known_research_boundary",
+      "description": "Passing tests validate internal consistency among the paper, data, constants, code, and executable proxies. They do not establish external empirical truth."
+    },
+    {
+      "id": "NOTE-002",
+      "title": "Proxy replacement work",
+      "status": "future_work",
+      "description": "Several physics-facing claims are intentionally represented as bounded or reference-value proxies until full derivations and independent empirical comparisons are added."
+    }
+  ]
+}

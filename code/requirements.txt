@@ -1,0 +1,16 @@
+# Runtime dependencies
+numpy>=1.24.0,<3
+scipy>=1.11.0
+sympy>=1.12.0
+mpmath>=1.2.0
+pandas>=1.3.0
+matplotlib>=3.8.0
+seaborn>=0.11.0
+psutil>=5.8.0; platform_system!="Windows"
+
+# Test and validation dependencies
+pytest>=8.0.0
+pytest-cov>=6.0.0
+pytest-benchmark>=3.4.1
+pytest-timeout>=2.0.0
+hypothesis>=6.0.0

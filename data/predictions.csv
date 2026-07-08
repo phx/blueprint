@@ -1,0 +1,4 @@
+observable,predicted,reference,uncertainty,parameters,cv_score
+M_GUT,2.1e+16,2.09e+16,3000000000000000.0,1.0,0.95
+alpha_GUT,0.0376,0.03761,0.0002,1.0,0.96
+tau_p,1e+34,1.01e+34,3e+33,1.0,0.94
