@@ -26,15 +26,15 @@ and successful attempts to falsify the framework.
 
 ```text
 GRADE_K.md      pattern, copy, change
-GRADE_1.md      repeating patterns
-GRADE_2.md      rules and limits
-GRADE_3.md      self-checking pattern
-GRADE_4.md      fractals and boundaries
-GRADE_5.md      stable change
-GRADE_6.md      five big ideas
-GRADE_7.md      five equations in plain English
-GRADE_8.md      what the code checks
-GRADE_9.md      internal consistency vs. proof
+GRADE_01.md     repeating patterns
+GRADE_02.md     rules and limits
+GRADE_03.md     self-checking pattern
+GRADE_04.md     fractals and boundaries
+GRADE_05.md     stable change
+GRADE_06.md     five big ideas
+GRADE_07.md     five equations in plain English
+GRADE_08.md     what the code checks
+GRADE_09.md     internal consistency vs. proof
 GRADE_10.md     proxies, anchors, and falsification
 GRADE_11.md     theory-building and external validation
 GRADE_12.md     full high-school technical summary

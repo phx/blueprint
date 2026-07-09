@@ -6,7 +6,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 ELI5_DIR = PROJECT_ROOT / "ELI5_grade_school"
 
-GRADE_FILES = ["GRADE_K.md"] + [f"GRADE_{grade}.md" for grade in range(1, 13)]
+GRADE_FILES = ["GRADE_K.md"] + [f"GRADE_{grade:02d}.md" for grade in range(1, 13)]
 
 
 def test_grade_school_eli5_folder_has_expected_files():
@@ -26,7 +26,7 @@ def test_each_grade_file_preserves_the_validation_boundary():
 
 
 def test_later_grade_files_name_the_core_equation_spine():
-    for filename in [f"GRADE_{grade}.md" for grade in range(7, 13)]:
+    for filename in [f"GRADE_{grade:02d}.md" for grade in range(7, 13)]:
         text = (ELI5_DIR / filename).read_text(encoding="utf-8")
         assert "F = T[F]" in text, filename
         assert "W[F] -> F'" in text, filename
