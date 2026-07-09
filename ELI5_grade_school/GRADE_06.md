@@ -5,12 +5,12 @@
 The Divine Blueprint tries to explain reality as a bounded, self-checking,
 self-updating information pattern.
 
-That sounds big because it is big. It is a theory-of-everything-scale candidate
-framework.
+That sounds big because it is big. It is a possible theory-of-everything-scale
+model.
 
 But it is not proven yet.
 
-## Why A New Framework Is Being Suggested
+## Why A New Model Is Being Suggested
 
 Modern physics is powerful, but incomplete.
 
@@ -32,7 +32,7 @@ What if these are different views of one deeper pattern?
 3. Recursive flow: force-like quantities can change across energy levels by a
    controlled rule.
 4. Fixed point: a stable reality must be self-consistent.
-5. Generative succession: a pattern can produce a new related pattern.
+5. Generative succession: a pattern can produce a new related version.
 
 ## Why W[F] -> F' Is Important
 
@@ -42,7 +42,8 @@ The symbol:
 W[F] -> F'
 ```
 
-means a process `W` takes a pattern `F` and produces a successor `F'`.
+means a process `W` takes a pattern `F` and produces a successor, or next
+version, called `F'`.
 
 The successor is:
 
@@ -54,17 +55,17 @@ That is the math version of "copy with a controlled twist."
 
 ## What The Tests Check
 
-The tests check internal consistency.
+The tests check whether the project’s own parts agree with each other.
 
-They do not prove external reality.
+They do not prove the real world works this way.
 
-They do show that the repo is not just an essay. It has a paper, code, formula
-registry, validation matrix, empirical-anchor ledger, and tests.
+They do show that the project is not just an essay. It has a paper, computer
+code, organized claim lists, reference-value records, and tests.
 
 ## Not Proven Yet
 
 Not proven yet:
 
-Reference values such as known particle values are anchors, not discoveries.
-The next scientific step is replacing anchors with derivations and comparing
-the framework against independent measurements.
+Reference values such as known particle values are checkpoints, not
+discoveries. The next scientific step is replacing checkpoints with new
+calculations and comparing the model against independent measurements.

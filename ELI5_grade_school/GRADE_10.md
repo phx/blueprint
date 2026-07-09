@@ -28,9 +28,9 @@ W[F] -> F'
 
 These equations are the public spine of the framework.
 
-## What The Repo Actually Proves
+## What The Project Actually Proves
 
-The repo proves internal consistency claims:
+The project proves internal consistency claims:
 
 - formula rows have code paths
 - validation-matrix rows have tests
@@ -47,8 +47,8 @@ A proxy is a limited executable stand-in for a larger theory claim.
 
 An anchor is a known or proposed value used as a reference point.
 
-For example, if the repo contains a known Higgs-sector value, that does not mean
-the framework derived it. It means the value is tracked and synchronized.
+For example, if the project contains a known Higgs-sector value, that does not
+mean the framework derived it. It means the value is tracked and synchronized.
 
 The real breakthrough would be:
 

@@ -22,10 +22,10 @@ W[F] -> F'
 
 Many speculative theories stay as prose.
 
-This repo tries to make the theory inspectable:
+This project tries to make the theory inspectable:
 
 ```text
-paper claim -> formula row -> code implementation -> pytest assertion
+paper claim -> formula row -> code implementation -> automated test
 ```
 
 That does not make it proven physics.
@@ -61,9 +61,9 @@ The test suite checks internal agreement among:
 - README
 - formula registry
 - validation matrix
-- empirical-anchor ledger
+- reference-value records
 - Python implementations
-- pytest tests
+- automated tests
 
 It also checks that known reference values are not quietly treated as derived
 predictions.

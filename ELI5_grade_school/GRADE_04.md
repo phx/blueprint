@@ -69,11 +69,10 @@ The successor is similar to the parent, but not identical.
 
 Not proven yet:
 
-The tests show that the paper, code, and ledgers agree internally. They do not
-show that the universe has been proven to work this way.
+The tests show that the paper, computer steps, and records agree with each
+other. They do not show that the universe has been proven to work this way.
 
 ## Why It Could Matter
 
-If the framework survives real-world testing, it could connect repeating
-patterns, information limits, forces, stability, and change into one scientific
-language.
+If the idea survives real-world testing, it could connect repeating patterns,
+information limits, forces, stability, and change into one scientific language.

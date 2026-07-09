@@ -32,11 +32,11 @@ The Divine Blueprint asks whether reality might have a deep recipe like that.
 4. A stable system must agree with itself.
 5. Reality might make new versions of its own pattern.
 
-## What The Code Checks
+## What The Computer Checks
 
-The code checks whether the paper's rules work together.
+The computer checks whether the written rules work together.
 
-It checks the math, the tables, and the computer functions.
+It checks the math, the tables, and the computer steps.
 
 It also checks the "copy with a twist" idea:
 
@@ -48,8 +48,8 @@ new pattern = similar to old pattern, but not an exact clone
 
 Not proven yet:
 
-Passing tests means the repo is internally consistent. It does not prove the
-whole universe follows these rules.
+Passing tests means the project’s own pieces agree with each other. It does
+not prove the whole universe follows these rules.
 
 ## Why It Could Be Exciting
 

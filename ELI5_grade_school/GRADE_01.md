@@ -43,7 +43,8 @@ Those little changes matter because they let things grow.
 
 The tests are computer checks.
 
-They check whether the paper, numbers, rules, and code agree with each other.
+They check whether the paper, numbers, rules, and computer steps agree with
+each other.
 
 That is important.
 
@@ -53,7 +54,7 @@ But it is not the same as proving the universe works this way.
 
 Not proven yet:
 
-The Divine Blueprint is a candidate idea. It still needs real-world testing.
+The Divine Blueprint is an early idea. It still needs real-world testing.
 
 ## Why It Could Matter
 

@@ -69,7 +69,7 @@ It is not external empirical confirmation.
 
 ## Anchors, Proxies, And Predictions
 
-The repo now separates:
+The project now separates:
 
 - derived or executable internal claims
 - bounded proxies
@@ -107,6 +107,6 @@ of one recursive information structure.
 
 Not proven yet:
 
-The current repo supports a disciplined candidate framework, not a finished
+The current project supports a disciplined candidate framework, not a finished
 theory of everything. Passing tests mean the public artifact is internally
 coherent and auditable. Nature still gets the final vote.

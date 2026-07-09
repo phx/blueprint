@@ -48,7 +48,7 @@ separate proxies from derivations
 separate internal validation from external proof
 ```
 
-This is why the repo includes a validation matrix, formula registry, claim
+This is why the project includes a validation matrix, formula registry, claim
 triage ledger, adversarial-review ledger, term registry, and empirical-anchor
 ledger.
 

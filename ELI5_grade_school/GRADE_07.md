@@ -77,17 +77,18 @@ That is not a small idea.
 
 Not proven yet:
 
-The repo checks whether the framework agrees with itself. It does not prove
+The project checks whether the framework agrees with itself. It does not prove
 that the universe is described by the framework.
 
-The tests and code are an internal audit, not a final experiment.
+The tests and code are an internal check, not a final experiment.
 
 ## The Current Best Claim
 
 The honest claim is:
 
 ```text
-This is a theory-of-everything-scale candidate framework with an audit trail.
+This is a theory-of-everything-scale candidate framework with a checkable
+trail.
 ```
 
 The next step is external validation.

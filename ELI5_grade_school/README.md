@@ -9,11 +9,11 @@ The same core idea appears in every file:
 Reality may be a bounded, self-checking, self-updating information pattern.
 ```
 
-That sentence is a teaching shortcut, not a completed proof. The public repo
-currently validates internal consistency: paper claims, equations, ledgers,
-code, and tests agree with each other. It does not prove that nature works this
-way. External confirmation would require independent measurements, derivations,
-and successful attempts to falsify the framework.
+That sentence is a teaching shortcut, not a completed proof. The public project
+currently checks whether its own parts agree: paper claims, equations, data
+tables, code, and tests. It does not prove that nature works this way. Outside
+confirmation would require independent measurements, derivations, and strong
+attempts to prove the idea false.
 
 ## How to Use These Files
 
@@ -25,7 +25,7 @@ and successful attempts to falsify the framework.
 ## Reading Path
 
 ```text
-GRADE_K.md      pattern, copy, change
+GRADE_0-K.md    pattern, copy, change
 GRADE_01.md     repeating patterns
 GRADE_02.md     rules and limits
 GRADE_03.md     self-checking pattern

@@ -33,27 +33,27 @@ new patterns that are like the old pattern, but not exactly the same.
 
 That is how things can stay familiar and still change.
 
-## What The Code Does
+## What The Computer Check Does
 
-The code is like a checker.
+A computer can help grown-ups check the idea.
 
-It checks whether the rules in the paper fit together.
+It checks whether the rules fit together.
 
 It asks:
 
 ```text
 Do the rules agree?
-Does the pattern stay safe?
-Does the new pattern stay similar but not exactly copied?
+Does the pattern stay steady?
+Is the new pattern almost the same, but not exactly the same?
 ```
 
 ## Not Proven Yet
 
 Not proven yet:
 
-The code does not prove the universe really works this way.
+The computer check does not prove the universe really works this way.
 
-It only checks that the idea does not break inside the repo.
+It only checks that the idea fits together with itself.
 
 Scientists still need to test it in the real world.
 

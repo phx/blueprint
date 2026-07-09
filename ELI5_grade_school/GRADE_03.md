@@ -56,7 +56,7 @@ stable change
 
 ## What The Code Checks
 
-The code checks whether the paper and math agree inside the repo.
+The computer checks whether the paper and math agree with each other.
 
 It tests whether the new pattern keeps its size or strength, stays similar, and
 does not become a boring clone.
@@ -65,10 +65,10 @@ does not become a boring clone.
 
 Not proven yet:
 
-The repo proves internal agreement, not external reality. Scientists still need
-to test whether nature actually behaves this way.
+The project shows agreement inside its own pieces, not proof about the real
+world. Scientists still need to test whether nature actually behaves this way.
 
 ## Why It Could Matter
 
-If it is externally validated, it could give people one simple language for many
-hard science problems that currently look separate.
+If real-world tests support it, it could give people one simple language for
+many hard science problems that currently look separate.

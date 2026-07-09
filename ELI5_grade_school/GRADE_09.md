@@ -13,13 +13,13 @@ These are different:
 
 ```text
 Internal consistency:
-The paper, code, equations, ledgers, and tests agree with each other.
+The paper, code, equations, records, and tests agree with each other.
 
 External proof:
 Nature independently behaves the way the framework says it should.
 ```
 
-The repo has strong internal checks.
+The project has strong internal checks.
 
 External proof remains open.
 
@@ -65,12 +65,12 @@ identity plus novelty
 
 ## Reference Anchors
 
-Some numbers in the repo are reference anchors. They are known or proposed
+Some numbers in the project are reference anchors. They are known or proposed
 benchmark values used to keep the paper and code synchronized.
 
 They are not yet derived predictions from the five-equation core.
 
-That is why the repo now includes:
+That is why the project now includes:
 
 ```text
 data/empirical_anchors.csv
