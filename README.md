@@ -50,9 +50,14 @@ paper claim -> formula/data row -> implementation -> pytest assertion
 ```
 
 That does not prove nature realizes the model. Failure to disprove something is
-not the same as proof. But if the framework survives sharper mathematical
-criticism, replaces proxies with derivations, and later produces confirmed
-external predictions, the ramifications would be large:
+not the same as proof. The current claim is narrower and more useful: this
+repository has not yet identified a decisive contradiction that rules out the
+framework's core mathematical architecture. If such a contradiction exists, the
+project is explicitly asking critics to name it.
+
+If the framework survives sharper mathematical criticism, replaces proxies with
+derivations, and later produces confirmed external predictions, the
+ramifications would be large:
 
 - unification would be framed as recursive information architecture rather than
   only particle cataloging;
@@ -76,7 +81,7 @@ The Divine Blueprint asks whether several hard-to-connect domains can be modeled
 3. couplings change across energy scale;
 4. generative systems produce successors that are similar but not identical.
 
-The code does not prove that the universe works this way. It checks whether the paper, formulas, constants, data tables, and Python implementations agree with one another. A strong criticism is one that identifies a broken equation, an unsupported proxy, a mismatch between paper and code, or an external measurement that rules out a claimed physical mapping.
+The code does not prove that the universe works this way. It checks whether the paper, formulas, constants, data tables, and Python implementations agree with one another. The current public challenge is to find the first decisive falsifier: a broken equation, an unsupported proxy, a mismatch between paper and code, or an external measurement that rules out a claimed physical mapping.
 
 Read the project in this order:
 
