@@ -11,6 +11,8 @@ from typing import Sequence
 
 import numpy as np
 
+from .errors import ValidationError
+
 
 def architecture_terms() -> tuple[str, ...]:
     """Return the five-term synthesis stated in the introduction."""
@@ -186,8 +188,13 @@ def measurement_update(rho0: np.ndarray, alpha: float, channel_outputs: Sequence
 def normalized_probabilities(amplitudes: Sequence[complex]) -> np.ndarray:
     """Compute probabilities that sum to one."""
     values = np.asarray(amplitudes, dtype=complex)
+    if values.size == 0 or not np.all(np.isfinite(values)):
+        raise ValidationError("Amplitudes must be finite and non-empty")
     probabilities = np.abs(values) ** 2
-    return probabilities / np.sum(probabilities)
+    total = float(np.sum(probabilities))
+    if total <= 0.0 or not np.isfinite(total):
+        raise ValidationError("Cannot normalize zero-probability amplitudes")
+    return probabilities / total
 
 
 def gravitational_action_proxy(einstein_hilbert_term: float, alpha: float, curvature_terms: Sequence[float]) -> float:

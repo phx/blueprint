@@ -1513,8 +1513,13 @@ def _cosmological_constant(self, energy: float, lambda0: float = 1.0) -> Numeric
 
 def _measurement_probabilities(self, amplitudes: Any) -> np.ndarray:
     values = np.asarray(amplitudes, dtype=complex)
+    if values.size == 0 or not np.all(np.isfinite(values)):
+        raise ValidationError("Amplitudes must be finite and non-empty")
     probs = np.abs(values) ** 2
-    return probs / np.sum(probs)
+    total = float(np.sum(probs))
+    if total <= 0.0 or not np.isfinite(total):
+        raise ValidationError("Cannot normalize zero-probability amplitudes")
+    return probs / total
 
 
 def _decoherence_trace(self, density_matrix: Any) -> NumericValue:
