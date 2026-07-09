@@ -17,6 +17,8 @@ attempts to prove the idea false.
 
 ## How to Use These Files
 
+- Start with `THE_SELL.md` if the reader needs the clearest public hook before
+  choosing a grade level.
 - Start younger if the reader needs analogies before equations.
 - Start around grade 7 or grade 8 if the reader can handle simple formulas.
 - Start at grade 10 or above if the reader understands the difference between a
@@ -25,6 +27,7 @@ attempts to prove the idea false.
 ## Reading Path
 
 ```text
+THE_SELL.md     full simple public hook
 GRADE_0-K.md    pattern, copy, change
 GRADE_01.md     repeating patterns
 GRADE_02.md     rules and limits

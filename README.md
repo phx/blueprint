@@ -91,7 +91,13 @@ Read the project in this order:
 
 Passing tests do not prove that the external universe is described by this framework. They establish internal consistency between the paper, constants, equations, data tables, and code. External confirmation still requires independent measurement.
 
-For grade-level explanations, start with:
+For the simplest public-facing explanation, start with:
+
+```text
+ELI5_grade_school/THE_SELL.md
+```
+
+For grade-level explanations, continue with:
 
 ```text
 ELI5_grade_school/
