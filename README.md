@@ -91,6 +91,15 @@ Read the project in this order:
 
 Passing tests do not prove that the external universe is described by this framework. They establish internal consistency between the paper, constants, equations, data tables, and code. External confirmation still requires independent measurement.
 
+For grade-level explanations, start with:
+
+```text
+ELI5_grade_school/
+```
+
+That folder explains the same framework from kindergarten through grade 12 while
+preserving the same boundary: internal validation is not external proof.
+
 ## Current Paper
 
 The active paper is:
@@ -387,7 +396,7 @@ These are not cosmetic caveats. They are the first places the theory should be a
 The full active suite passes:
 
 ```text
-255 passed, 0 skipped
+259 passed, 0 skipped
 TOTAL 1840 statements, 0 missed
 100.00% active-core coverage
 Required test coverage of 100% reached
