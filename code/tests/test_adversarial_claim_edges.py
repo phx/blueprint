@@ -103,6 +103,7 @@ CLAIM_EDGE_PRESSURE = {
     "generative_operator": (
         "zero-field rejection",
         "zero-step sequence identity",
+        "colinear successor rejection",
     ),
     "uncertainty": (
         "zero-uncertainty boundary",
@@ -219,6 +220,7 @@ def test_generative_operator_rejects_degenerate_edge_inputs():
         [[1.0, 2.0, 3.0]],
         [1.0, np.nan, 2.0],
         [0.0, 0.0, 0.0],
+        [1.0, 1.0, 1.0],
     ):
         with pytest.raises(ValidationError):
             generative_operator(invalid, alpha=ALPHA_VAL)

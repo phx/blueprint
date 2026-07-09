@@ -238,6 +238,10 @@ code/tests/test_formula_registry.py
 
 `data/claim_triage.csv` is the critique-response ledger. It separates claims that are executable inside the repository from bounded proxies, formalization gaps, external empirical targets, non-executable context, and presentation risks. This prevents a broad or symbolic claim from being treated as code-validated evidence unless it has been converted into a testable form.
 
+`data/term_registry.csv` is the definition ledger. It names the core symbols and audit terms so that critics can check whether a term is undefined or drifting across paper, README, data, and code.
+
+`data/adversarial_review.csv` is the standing self-attack ledger. It records known critique vectors, the risk if each critique is true, the current mitigation, and the next failure target a critic should try to hit.
+
 It validates executable versions of the paper's main claims:
 
 - Fractal scaling and bounded fixed-point recursion.
@@ -278,6 +282,35 @@ The current claim classes are:
 
 This is the response to a useful outside criticism: non-executable claims need thresholds rather than blanket acceptance or blanket dismissal. The repository now treats that distinction as part of the validation apparatus.
 
+## Adversarial Review Gates
+
+The project now treats the following attacks as standing review gates rather
+than hostile noise:
+
+- Which term is undefined?
+- Which formula does not constrain anything?
+- Which test only validates an assumption?
+- Which claim cannot be converted into an executable or empirical target?
+- Where does `W[F] -> F'` become notation theater instead of a useful
+  generative model?
+- Does the validation matrix prevent semantic drift, or only organize it?
+
+The public response is not to wave these questions away. The response is to make
+them executable where possible:
+
+```text
+data/term_registry.csv
+data/adversarial_review.csv
+code/tests/test_adversarial_review.py
+code/tests/test_adversarial_claim_edges.py
+```
+
+The generative operator is now explicitly guarded against a notation-theater
+failure mode: if an input produces a colinear or exact-clone-style successor,
+the code rejects it instead of counting it as valid self-replication. A valid
+`W[F] -> F'` result must preserve norm while also producing a non-colinear,
+positive-residual successor.
+
 ## What Has Been Mathematically Verified
 
 Within this repository, "verified" means internally validated against the paper's own formal claims. It does not mean experimentally proven.
@@ -287,11 +320,13 @@ The tests verify that:
 - the core equations appear in both the paper and README;
 - each row in `data/validation_matrix.csv` references an existing paper anchor and pytest function;
 - each row in `data/formula_registry.csv` references an existing paper anchor, implementation path, and pytest function;
+- each core term in `data/term_registry.csv` has a definition, scope, and public anchor;
+- each attack in `data/adversarial_review.csv` has a mitigation, evidence path, and next failure target;
 - numerical predictions and constants used by the paper are present in code or tracked data;
 - recursive series and coupling proxies remain bounded under tested conditions;
 - holographic entropy scales with boundary area in the implemented proxy;
 - measurement probabilities normalize and density-matrix traces are preserved in the implemented proxy;
-- the `W[F] -> F'` operator preserves norm, produces a self-similar non-identical successor, and remains bounded over finite replication sequences;
+- the `W[F] -> F'` operator preserves norm, rejects degenerate clone/colinear cases, produces a self-similar non-identical successor, and remains bounded over finite replication sequences;
 - uncertainty propagation follows the paper's quadrature rule;
 - every active line in `code/core` is exercised by the test suite.
 
@@ -319,8 +354,8 @@ These are not cosmetic caveats. They are the first places the theory should be a
 The full active suite passes:
 
 ```text
-239 passed, 0 skipped
-TOTAL 1818 statements, 0 missed
+250 passed, 0 skipped
+TOTAL 1840 statements, 0 missed
 100.00% active-core coverage
 Required test coverage of 100% reached
 ```

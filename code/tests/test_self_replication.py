@@ -5,6 +5,7 @@ import pytest
 
 from core.errors import ValidationError
 from core.self_replication import (
+    _validate_nontrivial_successor,
     generative_operator,
     replicate_field,
     replicate_wavefunction,
@@ -44,6 +45,17 @@ def test_generative_operator_creates_self_similar_non_clone():
     assert metrics.overlap == pytest.approx(similarity)
     assert metrics.residual > 0
     assert metrics.novelty == pytest.approx(1.0 - similarity)
+
+
+def test_generative_operator_rejects_colinear_successors():
+    constant_seed = np.ones(8, dtype=complex)
+
+    with pytest.raises(ValidationError):
+        generative_operator(constant_seed, alpha=0.1, novelty=0.0, phase=0.0)
+    with pytest.raises(ValidationError):
+        generative_operator(constant_seed, alpha=0.1, novelty=0.2, phase=np.pi / 7)
+    with pytest.raises(ValidationError):
+        _validate_nontrivial_successor(np.ones(3, dtype=complex), np.zeros(3, dtype=complex))
 
 
 def test_replication_sequence_remains_bounded():

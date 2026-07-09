@@ -81,6 +81,21 @@ def normalize_like(field: np.ndarray, target_norm: float) -> np.ndarray:
     return field * (target_norm / norm)
 
 
+def _validate_nontrivial_successor(parent: np.ndarray, child: np.ndarray) -> None:
+    """Require ``F'`` to be self-similar without collapsing into a clone."""
+    parent_norm = np.linalg.norm(parent)
+    child_norm = np.linalg.norm(child)
+    if parent_norm == 0 or child_norm == 0:
+        raise ValidationError("Cannot validate zero-norm replication")
+
+    residual = np.linalg.norm(child - parent) / parent_norm
+    overlap = abs(np.vdot(parent, child)) / (parent_norm * child_norm)
+    if residual <= 1e-12 or overlap >= 1.0 - 1e-12:
+        raise ValidationError(
+            "Generated successor must be self-similar but non-identical"
+        )
+
+
 def self_similarity(parent: FieldLike, child: FieldLike) -> float:
     """Compute normalized pattern overlap in ``[0, 1]``."""
     parent_values = _as_complex_array(parent)
@@ -128,7 +143,9 @@ def generative_operator(
     reflective_part = (1.0 - alpha) * parent + alpha * shifted
     generative_part = novelty * alpha * embodiment * gradient
     child = reflective_part + generative_part
-    return normalize_like(child, float(parent_norm))
+    child = normalize_like(child, float(parent_norm))
+    _validate_nontrivial_successor(parent, child)
+    return child
 
 
 def replication_metrics(parent: FieldLike, child: FieldLike) -> ReplicationMetrics:
