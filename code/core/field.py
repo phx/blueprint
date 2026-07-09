@@ -1,8 +1,10 @@
-"""Unified field theory implementation.
+"""Candidate unified-field proxy implementation.
 
 Validation note:
-The unified field framework provides a complete description of quantum
-and gravitational phenomena through recursive dimensional reduction.
+This module implements executable proxies, reference anchors, and consistency
+checks for The Divine Blueprint. It does not claim that the implemented
+numerical anchors are derived physical predictions unless a derivation is
+explicitly provided by the paper and validation ledgers.
 """
 
 from typing import Dict, Optional, Union, List, Tuple, Callable, Any
@@ -41,11 +43,12 @@ DATA_DIR = Path(__file__).resolve().parents[2] / "data"
 
 class UnifiedField:  # pragma: no cover - archival derivation; stable API is assigned below
     """
-    Base class for unified field theory implementation.
+    Base class for candidate unified-field calculations.
     
     Validation note:
-    Implements the complete unified field theory with proper
-    quantum corrections and fractal structure.
+    Implements finite proxies and reference anchors used by the public
+    validation harness. External physical validation remains separate from
+    internal paper/code consistency.
     """
     
     def __init__(
@@ -700,10 +703,10 @@ class UnifiedField:  # pragma: no cover - archival derivation; stable API is ass
 
     def validate_predictions(self) -> Dict[str, NumericValue]:
         """
-        Validate theoretical predictions against tracked reference data.
+        Validate internal reference proxies against tracked reference data.
         
         Validation note:
-        The theory exposes several precise, testable reference proxies:
+        The framework exposes several finite reference proxies:
         1. Coupling constant evolution
         2. Gravitational wave spectrum
         3. Proton decay rate
@@ -735,10 +738,10 @@ class UnifiedField:  # pragma: no cover - archival derivation; stable API is ass
             
     def _compute_theoretical_predictions(self) -> Dict[str, NumericValue]:
         """
-        Compute core theoretical predictions.
+        Compute core reference proxies.
         
         Validation note:
-        The theory predicts:
+        The archival proxy layer represents:
         1. Mass spectrum: m_n = m₀α^n
         2. Coupling evolution: g(E) = g₀/(1 + βg₀log(E/E₀))
         3. Cross sections: σ ~ α²/E²
@@ -1469,6 +1472,7 @@ def _compute_energy_eigenvalue(self, n: int) -> float:
 
 
 def _compute_theoretical_predictions_stable(self) -> Dict[str, NumericValue]:
+    """Return internal GUT reference anchors used by the validation harness."""
     return {
         'M_GUT': NumericValue(2.1e16, 0.3e16),
         'alpha_GUT': NumericValue(0.0376, 0.0002),
@@ -1486,6 +1490,7 @@ def _gw_spectrum(self, omega: Any) -> np.ndarray:
 
 
 def _proton_decay_rate(self) -> NumericValue:
+    """Return the channel-level proton-decay rate proxy, not an observed rate."""
     return NumericValue(1.6e-36, 0.3e-36)
 
 
@@ -1501,6 +1506,7 @@ def _dark_matter_coupling(self, level: int, standard_model_coupling: float = 1.0
 
 
 def _dark_energy_density(self) -> NumericValue:
+    """Return the dark-energy density-scale reference anchor."""
     value = (2.3e-3) ** 4
     return NumericValue(value, value * self.precision)
 
@@ -1559,6 +1565,7 @@ def _boundary_fractal_dimension(self) -> NumericValue:
 
 
 def _low_energy_signatures(self) -> Dict[str, NumericValue]:
+    """Return low-energy signature reference anchors for traceability tests."""
     return {
         'delta_r_w': NumericValue(37.979e-3, 0.084e-3),
         'bs_to_mumu': NumericValue(3.09e-9, 0.19e-9),
@@ -1586,6 +1593,7 @@ def _neutrino_masses(self, config: FieldConfig, **kwargs):
 
 
 def _oscillation_probability(self, initial: str, final: str, L: float, E: float, **kwargs) -> NumericValue:
+    """Return the current oscillation benchmark anchor, not a full L/E model."""
     return NumericValue(0.0597, 0.001)
 
 
@@ -1606,6 +1614,7 @@ def _ckm_matrix(self, **kwargs) -> np.ndarray:
 
 
 def _jarlskog(self, **kwargs) -> float:
+    """Return the current CKM-sector Jarlskog reference anchor."""
     return 3.2e-5
 
 
@@ -1614,18 +1623,22 @@ def _cp_violation(self, **kwargs) -> float:
 
 
 def _baryon_asymmetry(self, **kwargs) -> float:
+    """Return the baryon-asymmetry reference anchor."""
     return 6.1e-10
 
 
 def _higgs_vev(self, config: FieldConfig, **kwargs) -> float:
+    """Return the Higgs vacuum-expectation reference anchor."""
     return 246.0
 
 
 def _higgs_mass(self, config: FieldConfig, **kwargs) -> float:
+    """Return the Higgs-mass reference anchor."""
     return 125.1
 
 
 def _fermion_masses(self, config: FieldConfig, **kwargs) -> Dict[str, Any]:
+    """Return fermion mass reference anchors used for hierarchy tests."""
     return {
         'top': NumericValue(173.0, 0.1),
         'charm': NumericValue(1.27, 0.01),

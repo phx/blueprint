@@ -7,7 +7,7 @@ from scipy import integrate as scipy_integrate
 from .types import NumericValue, Energy, RealValue
 from .errors import ComputationError
 
-_trapezoid = getattr(np, "trapezoid", np.trapz)
+_trapezoid = np.trapezoid if hasattr(np, "trapezoid") else np.trapz
 
 def integrate_phase_space(
     f: Union[Expr, Callable],

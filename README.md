@@ -242,15 +242,17 @@ code/tests/test_formula_registry.py
 
 `data/adversarial_review.csv` is the standing self-attack ledger. It records known critique vectors, the risk if each critique is true, the current mitigation, and the next failure target a critic should try to hit.
 
+`data/empirical_anchors.csv` is the reference-anchor ledger. It names values that are currently typed into the code or data tables as calibration targets, known benchmarks, or internal scale proxies. These reference anchors are not derived predictions. They are tracked so critics can distinguish table agreement from a future derivation.
+
 It validates executable versions of the paper's main claims:
 
 - Fractal scaling and bounded fixed-point recursion.
 - Holographic area-law entropy.
-- GUT-scale constants and predictions.
+- GUT-scale reference values and internal lifetime-scale proxy.
 - Coupling convergence and beta-function proxy.
 - Fermion hierarchy.
-- CP violation and baryon asymmetry proxies.
-- Higgs and neutrino-sector values.
+- CP-violation and baryon-asymmetry reference proxies.
+- Higgs and neutrino-sector reference anchors.
 - Dark-matter density and coupling suppression proxies.
 - Dark-energy density proxy.
 - Measurement probabilities, trace preservation, and collapse-time recursion.
@@ -262,6 +264,36 @@ It validates executable versions of the paper's main claims:
 - Uncertainty propagation by quadrature.
 
 Some claims in the paper are broad theory claims rather than directly measurable code claims. Those are represented as bounded computational proxies and explicit falsification criteria, not as completed empirical proof.
+
+## Reference Anchors vs. Derived Predictions
+
+A severe but useful critique is that several public-facing numerical values are not derived from the five-equation core. That critique is correct for the current repository state.
+
+Values such as `m_H = 125.1 GeV`, `v = 246.0 GeV`, `J ~= 3.2e-5`, `eta_B ~= 6.1e-10`, `P(mu->e) ~= 0.0597`, selected fermion masses, dark-energy density scale, low-energy signatures, and parts of the GUT table are currently reference anchors. They are present so the paper, code, formula registry, and validation matrix can stay synchronized against known or proposed benchmark values.
+
+They are not yet successful derivations from:
+
+```text
+F(x, lambda t, lambda E) = lambda^D F(x, t, E)
+S <= A / (4 l_P^2)
+g_i(lambda E) = g_i(E) + sum alpha^n F_n^i(lambda)
+F = T[F]
+W[F] -> F'
+```
+
+This matters. Matching a hardcoded benchmark to the same benchmark in a table is not a physical discovery. It is a bookkeeping guardrail. The revolutionary step would be one level higher: replacing a reference anchor with a derivation, or using the framework to predict a value or relation before it is independently measured.
+
+That boundary is now part of the public validation apparatus:
+
+```text
+data/empirical_anchors.csv
+code/tests/test_empirical_anchors.py
+```
+
+The repository should therefore be attacked in two different ways:
+
+- For current code: find circular anchors, unsupported proxies, missing definitions, paper/code mismatches, or values incorrectly described as derived.
+- For future theory: demand an actual derivation of one reference quantity from the recursive architecture.
 
 ## Claim Triage Protocol
 
@@ -322,7 +354,8 @@ The tests verify that:
 - each row in `data/formula_registry.csv` references an existing paper anchor, implementation path, and pytest function;
 - each core term in `data/term_registry.csv` has a definition, scope, and public anchor;
 - each attack in `data/adversarial_review.csv` has a mitigation, evidence path, and next failure target;
-- numerical predictions and constants used by the paper are present in code or tracked data;
+- numerical reference anchors and constants used by the paper are present in code or tracked data;
+- values listed in `data/empirical_anchors.csv` are explicitly treated as anchors or proxies, not as derived predictions;
 - recursive series and coupling proxies remain bounded under tested conditions;
 - holographic entropy scales with boundary area in the implemented proxy;
 - measurement probabilities normalize and density-matrix traces are preserved in the implemented proxy;
@@ -354,7 +387,7 @@ These are not cosmetic caveats. They are the first places the theory should be a
 The full active suite passes:
 
 ```text
-250 passed, 0 skipped
+255 passed, 0 skipped
 TOTAL 1840 statements, 0 missed
 100.00% active-core coverage
 Required test coverage of 100% reached

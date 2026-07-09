@@ -135,7 +135,7 @@ def coupling_spread(couplings: Sequence[float]) -> float:
 
 
 def gut_prediction_values() -> dict[str, float]:
-    """Return the paper's internal GUT prediction proxies."""
+    """Return the paper's internal GUT reference anchors."""
     return {"M_GUT": 2.1e16, "alpha_GUT": 0.0376, "tau_p": 1.0e34, "Gamma_p_to_e_pi": 1.6e-36}
 
 
@@ -152,7 +152,7 @@ def cp_phase(abs_alpha: float, k: int, total: int, delta_k: float) -> complex:
 
 
 def jarlskog_baryon_values() -> dict[str, float]:
-    """Return the CP and baryon-asymmetry reference proxies."""
+    """Return the CP and baryon-asymmetry reference anchors."""
     return {"J": 3.2e-5, "eta_B": 6.1e-10}
 
 
@@ -173,7 +173,7 @@ def dark_matter_coupling(level: int, standard_model_coupling: float, alpha: floa
 
 
 def dark_energy_density(scale_ev: float = 2.3e-3) -> float:
-    """Compute (2.3e-3 eV)^4 by default."""
+    """Return the dark-energy density-scale reference anchor by default."""
     return float(scale_ev ** 4)
 
 
@@ -231,7 +231,7 @@ def gw_power_law_ratio(f2: float, f1: float, exponent: float = 2.0 / 3.0) -> flo
 
 
 def low_energy_signature_values() -> dict[str, float]:
-    """Return the low-energy reference proxies."""
+    """Return low-energy signature reference anchors."""
     return {"Delta_r_W": 37.979e-3, "B_Bs_to_mumu": 3.09e-9, "sin2_theta13": 0.0218}
 
 

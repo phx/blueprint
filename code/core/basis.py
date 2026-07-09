@@ -33,7 +33,7 @@ from .errors import (
     CoherenceError
 )
 
-_trapezoid = getattr(np, "trapezoid", np.trapz)
+_trapezoid = np.trapezoid if hasattr(np, "trapezoid") else np.trapz
 
 DATA_DIR = Path(__file__).resolve().parents[2] / "data"
 

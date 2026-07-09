@@ -7,7 +7,7 @@ from .errors import ValidationError, PhysicsError
 from .types import Energy, Momentum, WaveFunction
 from .physics_constants import X, T
 
-_trapezoid = getattr(np, "trapezoid", np.trapz)
+_trapezoid = np.trapezoid if hasattr(np, "trapezoid") else np.trapz
 
 def validate_energy(energy: Union[float, Energy]) -> Energy:
     """

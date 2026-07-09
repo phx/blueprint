@@ -13,7 +13,7 @@ from .physics_constants import ALPHA_VAL, X, E
 from .basis import FractalBasis
 from .constants import Z_MASS
 
-_trapezoid = getattr(np, "trapezoid", np.trapz)
+_trapezoid = np.trapezoid if hasattr(np, "trapezoid") else np.trapz
 
 def compute_cross_section(  # pragma: no cover - superseded by stable definition below
     energy: Union[float, Energy],

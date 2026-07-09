@@ -11,7 +11,7 @@ from numpy import floating  # For type checking
 from functools import wraps
 from enum import Enum, auto
 
-_trapezoid = getattr(np, "trapezoid", np.trapz)
+_trapezoid = np.trapezoid if hasattr(np, "trapezoid") else np.trapz
 
 __all__ = [
     'RealValue',

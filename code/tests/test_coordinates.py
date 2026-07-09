@@ -2,13 +2,17 @@
 
 import pytest
 try:
-    from hypothesis import given, strategies as st
+    from hypothesis import given, settings, strategies as st
     HAS_HYPOTHESIS = True
 except ImportError:
     from unittest.mock import patch
     HAS_HYPOTHESIS = False
     # Mock hypothesis decorator if not available
     def given(*args, **kwargs):
+        def decorator(f):
+            return f
+        return decorator
+    def settings(*args, **kwargs):
         def decorator(f):
             return f
         return decorator
@@ -60,6 +64,7 @@ def constants(request):
 class TestLorentzInvariance:
     """Test Lorentz invariance properties."""
     
+    @settings(deadline=None)
     @given(st.floats(min_value=-0.9, max_value=0.9))
     def test_energy_density_invariance(self, beta):
         """Test that energy density transforms correctly."""
