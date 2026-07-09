@@ -23,3 +23,5 @@ If it turns out right after more checkin' (and it needs real tests out in the wo
 But listen up, and don't go tellin' your teacher I said this: Right now it's still a guess that's holdin' together real nice on paper and computer. The paper says straight up — come test it hard, try to break it, make it better. That's how smart folks do science. Ain't no magic wand; it's hard work with math and tests, just like y'all learnin' your times tables.
 
 So there ya go, class! The universe might be one big self-makin', pattern-repeatin', copy-with-a-twist machine runnin' on a Divine Blueprint. Now who's got questions? And who wants some Moon Pies after? Y'all did good listenin' — better than my coon dog when I holler at him to git off the couch!"
+
+[No apologies. The author himself is from Alabama.]
