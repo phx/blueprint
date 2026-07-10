@@ -127,6 +127,15 @@ def test_paper_and_readme_state_validation_boundary_and_source_of_truth():
         assert "external" in document
 
 
+def test_readme_rejects_burden_shifting():
+    readme = re.sub(r"\s+", " ", README_PATH.read_text(encoding="utf-8").lower())
+
+    assert "failure to disprove something is not evidence for it" in readme
+    assert "critics do not carry the burden" in readme
+    assert "organized its claims so precise contradictions" in readme
+    assert "has not yet identified a decisive contradiction" not in readme
+
+
 def test_claim_triage_protocol_tracks_non_executable_boundaries():
     rows = _triage_rows()
     assert {row["claim_class"] for row in rows} == TRIAGE_CLASSES

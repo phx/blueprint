@@ -41,7 +41,7 @@ several things that are usually handled separately:
 - recursive self-reference,
 - and generative successor formation through `W[F] -> F'`.
 
-It also stands out because the paper is not left as prose alone. The repo
+It also stands out because the paper is not left as prose alone. The project
 contains a validation matrix, a formula registry, Python implementations, and a
 test suite that forces claims into an auditable chain:
 
@@ -50,10 +50,10 @@ paper claim -> formula/data row -> implementation -> pytest assertion
 ```
 
 That does not prove nature realizes the model. Failure to disprove something is
-not the same as proof. The current claim is narrower and more useful: this
-repository has not yet identified a decisive contradiction that rules out the
-framework's core mathematical architecture. If such a contradiction exists, the
-project is explicitly asking critics to name it.
+not evidence for it, and critics do not carry the burden of proving the whole
+project false. The current claim is narrower and more useful: the project has
+organized its claims so precise contradictions, unsupported proxies, paper/code
+mismatches, or failed external measurements can be named and acted on.
 
 If the framework survives sharper mathematical criticism, replaces proxies with
 derivations, and later produces confirmed external predictions, the
@@ -81,7 +81,7 @@ The Divine Blueprint asks whether several hard-to-connect domains can be modeled
 3. couplings change across energy scale;
 4. generative systems produce successors that are similar but not identical.
 
-The code does not prove that the universe works this way. It checks whether the paper, formulas, constants, data tables, and Python implementations agree with one another. The current public challenge is to find the first decisive falsifier: a broken equation, an unsupported proxy, a mismatch between paper and code, or an external measurement that rules out a claimed physical mapping.
+The code does not prove that the universe works this way. It checks whether the paper, formulas, constants, data tables, and Python implementations agree with one another. A useful public challenge is to find a concrete falsifier: a broken equation, an unsupported proxy, a mismatch between paper and code, or an external measurement that rules out a claimed physical mapping.
 
 Read the project in this order:
 

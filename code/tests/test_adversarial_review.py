@@ -24,6 +24,7 @@ REQUIRED_ATTACKS = {
     "nonconvertible_claim",
     "w_notation_theater",
     "semantic_drift",
+    "burden_shift",
 }
 
 REQUIRED_TERMS = {
